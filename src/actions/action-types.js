@@ -14,8 +14,10 @@ export const ACCOUNT_ACTIONS = {
  * @prop {number[]} conversationIds
  * @prop {number} selectedConversationId
  * @prop {number} hoveredConversationId
+ * @prop {number} focusedConversationId
  * @prop {object[][]} conversationMessages first array conversation ID, second array conversation messages
- * @prop {number[]} openedConversationIds
+ * @prop {number[]} newConversationMessageCounts
+ * @prop {object[]} openedConversations
  * @prop {string} cmcMessage
  */
 export const CONVERSATION_ACTIONS = {
@@ -36,6 +38,7 @@ export const CONVERSATION_ACTIONS = {
     FOCUS_CONVERSATION: 'FOCUS_CONVERSATION',
     EXPAND_CONVERSATION_TAB: 'EXPAND_CONVERSATION_TAB',
     COLLAPSE_CONVERSATION_TAB: 'COLLAPSE_CONVERSATION_TAB',
+    
     HOVER_CONVERSATION_TAB: 'HOVER_CONVERSATION_TAB',
     UNHOVER_CONVERSATION_TAB: 'UNHOVER_CONVERSATION_TAB',
 }
@@ -47,7 +50,7 @@ export const CONVERSATION_ACTIONS = {
  * @prop {number[]} feedIds
  * @prop {number} selectedFeedId
  * @prop {number} hoveredFeedId
- * @prop {number} newFeedsCount
+ * @prop {object[]} newFeeds
  * 
  */
 export const FEED_ACTIONS = {
@@ -73,7 +76,8 @@ export const FEED_ACTIONS = {
  * @prop {number} focusedGrapevineId
  * @prop {object[][]} grapevineMessages first array grapevine ID, second array messages
  * @prop {number[][]} grapevineMessageIds first array grapevine ID, second array message IDs
- * @prop {int[]} newGrapevineMessageCounts first array grapevine ID, seond array message counts
+ * @prop {number[]} newGrapevineMessageCounts
+ * @prop {object[]} openedGrapevines
  * @prop {string} gmcMessage
  * @prop {boolean} gmcIsAnonymous
  * @prop {string} gmcName
@@ -96,8 +100,8 @@ export const GRAPEVINE_ACTIONS = {
  * @prop {number[]} groupIds
  * @prop {number} selectedGroupId
  * @prop {number} hoveredGroupId
- * @prop {number} newGroupsCount
- * @prop {number[]} openedGroupIds
+ * @prop {object[]} newGroups
+ * @prop {object[]} openedGroups
  * @prop {string} gcName
  * @prop {string} gcIdentifier
  * @prop {string} gcTags
@@ -156,7 +160,6 @@ export const NOTIFICATION_ACTIONS = {
  * @prop {number[][]} postIds first array topic ID, second array post IDs
  * @prop {number} hoveredPostId
  * @prop {number[]} quotedPosts
- * @prop {number[]} newPostCounts
  * @prop {object[][]} newPosts first array topic ID, second array posts
  * @prop {string} pcContent
  * @prop {boolean} pcIsAnonymous
@@ -195,11 +198,11 @@ export const POST_ACTIONS = {
  * @prop {number[][]} topicIds first array group ID, second array topic IDs
  * @prop {number} selectedTopicId
  * @prop {number} hoveredTopicId
- * @prop {number[]} newTopicCounts
+ * @prop {object[][]} newTopics
  * @prop {string} tcTitle
  * @prop {string} tcTags
  * @prop {boolean} tcIsAnonymous
- * @prop {number[][]} openedTopicIds first array group ID, second array topic counts
+ * @prop {object[][]} openedTopics first array group ID, second array topic counts
  * @prop {number} previewedTopicId
  * @prop {number} focusedTopicId
  * 
